@@ -1,5 +1,7 @@
 # Convergence Properties of Fast quasi-LPV Model Predictive Control
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4633758.svg)](https://doi.org/10.5281/zenodo.4633758)
+
 ## General
 
 This repository contains the simulation code to reproduce the tables and figures presented in
