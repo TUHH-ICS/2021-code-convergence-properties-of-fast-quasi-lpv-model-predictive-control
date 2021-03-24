@@ -1,3 +1,12 @@
+%---------------------------------------------------------------------------------------------------
+% For Paper
+% "Convergence Properties of Fast quasi-LPV Model Predictive Control"
+% by Christian Hespe and Herbert Werner
+% Copyright (c) Institute of Control Systems, Hamburg University of Technology. All rights reserved.
+% Licensed under the GPLv3. See LICENSE in the project root for license information.
+% Author(s): Christian Hespe
+%---------------------------------------------------------------------------------------------------
+
 function evaluate_perf(name, optim, x_traj, u_traj, solver_stats, export)
 %EVALUATE_PERF Evaluate the computational performance of the different MPC solvers
 %   This function calculates performance measures for the different MPC solvers and prints them to

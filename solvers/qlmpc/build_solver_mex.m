@@ -1,3 +1,12 @@
+%---------------------------------------------------------------------------------------------------
+% For Paper
+% "Convergence Properties of Fast quasi-LPV Model Predictive Control"
+% by Christian Hespe and Herbert Werner
+% Copyright (c) Institute of Control Systems, Hamburg University of Technology. All rights reserved.
+% Licensed under the GPLv3. See LICENSE in the project root for license information.
+% Author(s): Christian Hespe
+%---------------------------------------------------------------------------------------------------
+
 function build_solver_mex(model, optim)
 %BUILD_SOLVER_MEX Take the qLMPC Matlab solvers and compile them into native MEX-functions to
 %improve the performance of the solvers

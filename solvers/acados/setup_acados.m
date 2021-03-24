@@ -1,3 +1,12 @@
+%---------------------------------------------------------------------------------------------------
+% For Paper
+% "Convergence Properties of Fast quasi-LPV Model Predictive Control"
+% by Christian Hespe and Herbert Werner
+% Copyright (c) Institute of Control Systems, Hamburg University of Technology. All rights reserved.
+% Licensed under the GPLv3. See LICENSE in the project root for license information.
+% Author(s): Christian Hespe
+%---------------------------------------------------------------------------------------------------
+
 function setup_acados()
 %SETUP_ACADOS This function is used to set up the ACADOS toolbox.
 %   This function will add the correct folders of the ACADOS installtion to

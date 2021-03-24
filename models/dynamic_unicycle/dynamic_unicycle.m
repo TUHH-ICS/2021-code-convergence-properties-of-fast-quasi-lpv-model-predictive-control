@@ -1,3 +1,12 @@
+%---------------------------------------------------------------------------------------------------
+% For Paper
+% "Convergence Properties of Fast quasi-LPV Model Predictive Control"
+% by Christian Hespe and Herbert Werner
+% Copyright (c) Institute of Control Systems, Hamburg University of Technology. All rights reserved.
+% Licensed under the GPLv3. See LICENSE in the project root for license information.
+% Author(s): Christian Hespe
+%---------------------------------------------------------------------------------------------------
+
 function [model, optim] = dynamic_unicycle()
 %DYNAMIC_UNICYCLE Defines the dynamic unicycle model
 %   This function defines the model for the dynamic unicycle. This means number of states and

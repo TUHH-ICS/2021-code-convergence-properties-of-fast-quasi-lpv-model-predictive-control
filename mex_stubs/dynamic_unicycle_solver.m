@@ -1,3 +1,12 @@
+%---------------------------------------------------------------------------------------------------
+% For Paper
+% "Convergence Properties of Fast quasi-LPV Model Predictive Control"
+% by Christian Hespe and Herbert Werner
+% Copyright (c) Institute of Control Systems, Hamburg University of Technology. All rights reserved.
+% Licensed under the GPLv3. See LICENSE in the project root for license information.
+% Author(s): Christian Hespe
+%---------------------------------------------------------------------------------------------------
+
 function [u_opt, x_opt, stats] = dynamic_unicycle_solver(optim, x0, x, u) %#codegen
 %DYNAMIC_UNICYCLE_SOLVER Stub that specializes the qLMPC solver for the dynamic unicycle model
 %   This stub function is required because the Matlab coder does not allow function handles as input
