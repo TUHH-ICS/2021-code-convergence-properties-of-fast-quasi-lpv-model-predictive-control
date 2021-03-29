@@ -75,28 +75,25 @@ for j = 1:averaging
             switch i
                 case 1
                     % Run the standard qLMPC solver
-                    tmval = tic;
-                    [u, x, stats] = ocp_qlmpc(optim, x_traj(:,j,k,i), x, u);
-                    solver_stats(i).total(j,k) = toc(tmval);
-                    solver_stats(i).iter(j,k)  = stats.iter;
-                    solver_stats(i).prep(j,k)  = stats.prep;
-                    solver_stats(i).solv(j,k)  = stats.solv;
+                    [u, x, ocp_stats] = ocp_qlmpc(optim, x_traj(:,j,k,i), x, u);
+                    solver_stats(i).total(j,k) = ocp_stats.total;
+                    solver_stats(i).iter(j,k)  = ocp_stats.iter;
+                    solver_stats(i).prep(j,k)  = ocp_stats.prep;
+                    solver_stats(i).solv(j,k)  = ocp_stats.solv;
                     u_traj(:,j,k,i)            = u(1:model.nu);
                 case 2
                     % Run the exact variant of qLMPC
-                    tmval = tic;
-                    [u, x, stats] = ocp_qlmpc_vel(optim, x_traj(:,j,k,i), x, u);
-                    solver_stats(i).total(j,k) = toc(tmval);
-                    solver_stats(i).iter(j,k)  = stats.iter;
-                    solver_stats(i).prep(j,k)  = stats.prep;
-                    solver_stats(i).solv(j,k)  = stats.solv;
+                    [u, x, ocp_stats] = ocp_qlmpc_vel(optim, x_traj(:,j,k,i), x, u);
+                    solver_stats(i).total(j,k) = ocp_stats.total;
+                    solver_stats(i).iter(j,k)  = ocp_stats.iter;
+                    solver_stats(i).prep(j,k)  = ocp_stats.prep;
+                    solver_stats(i).solv(j,k)  = ocp_stats.solv;
                     u_traj(:,j,k,i)            = u(1:model.nu);
                 case 3
                     % Run the acados based solver
                     ocp_acados.set('constr_x0', x_traj(:,j,k,i));
-                    tmval = tic;
                     ocp_acados.solve();
-                    solver_stats(i).total(j,k) = toc(tmval);
+                    solver_stats(i).total(j,k) = ocp_acados.get('time_tot');
                     solver_stats(i).iter(j,k)  = ocp_acados.get('sqp_iter');
                     solver_stats(i).prep(j,k)  = ocp_acados.get('time_lin')...
                             + ocp_acados.get('time_reg') + ocp_acados.get('time_sim');
@@ -104,9 +101,12 @@ for j = 1:averaging
                     u_traj(:,j,k,i) = ocp_acados.get('u', 0);
                 case 4
                     % Run the CasADi / Ipopt solver
-                    tmval = tic;
+                    tval = tic;
                     sol = ocp_casadi('p', x_traj(:,j,k,i), 'x0', u);
-                    solver_stats(i).total(j,k) = toc(tmval);
+                    solver_stats(i).total(j,k) = toc(tval);
+                    solver_stats(i).iter(j,k)  = stats(ocp_casadi).iter_count;
+                    solver_stats(i).prep(j,k)  = NaN;
+                    solver_stats(i).solv(j,k)  = NaN;
                     u_traj(:,j,k,i) = full(sol.x(1:model.nu));
                     u = sol.x;
             end

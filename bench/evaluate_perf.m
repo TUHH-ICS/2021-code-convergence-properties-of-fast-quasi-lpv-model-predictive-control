@@ -60,9 +60,7 @@ table_subtask = table(median(mean_total)', median(mean_solv)', median(mean_prep)
                       (total_cost - total_cost(4))/total_cost(4),...
                       'VariableNames', {'total', 'qp', 'prep', 'rcso'},...
                       'RowNames', solvers);
-table_subtask{3:4, 2} = NaN; % Ipopt and acados do not return valid results
-table_subtask{3:4, 3} = NaN; % Ipopt and acados do not return valid results
-table_subtask{4, 4}   = NaN; % Ipopt is the reference
+table_subtask{4, 4} = NaN; % Ipopt is the reference
 
 %% Plot solver times
 % Plot the total solver time, averaged over all simulations that were performed for this purpose

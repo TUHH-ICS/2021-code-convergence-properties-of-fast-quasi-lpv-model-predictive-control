@@ -25,6 +25,9 @@ function [u_opt, x_opt, stats] = qlmpc_solver(optim, model, nx, nu, x0, x, u) %#
 %   x_opt -> Optimal state trajectory
 %   stats -> Struct with timings and iteration information
 
+tval = tic;
+
+%% Initialize solver variables
 N     = optim.N;
 Q_hat = kron(eye(N+1), optim.Q);
 R_hat = kron(eye(N),   optim.R);
@@ -39,9 +42,10 @@ u_opt = u;
 x_opt = x;
 
 stats = struct;
-stats.iter = 0; % Solver iterations
-stats.solv = 0; % Time spent solving the linear systems
-stats.prep = 0; % Time spent preparing matrices
+stats.iter  = 0; % Solver iterations
+stats.solv  = 0; % Time spent solving the linear systems
+stats.prep  = 0; % Time spent preparing matrices
+stats.total = 0; % Total solver time
 
 %% qLMPC iterations
 % The solver is iterated until either optim.iter_max is hit, or the stopping criterion is satisfied
@@ -85,4 +89,7 @@ for i = 1:optim.iter_max
         stats.iter = stats.iter + 1;
     end
 end
+
+stats.total = toc(tval); % Save total solver time
+
 end
