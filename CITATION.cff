@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: Convergence Properties of Fast quasi-LPV Model Predictive Control
+message: If you use this software, please cite it using the metadata from this file.
+type: software
+authors:
+  - given-names: Christian
+    family-names: Hespe
+    orcid: 'https://orcid.org/0000-0001-5772-9044'
+    affiliation: Hamburg University of Technology, Institute of Control Systems
+  - given-names: Herbert
+    family-names: Werner
+    affiliation: Hamburg University of Technology, Institute of Control Systems
+    orcid: 'https://orcid.org/0000-0003-3456-5539'
+identifiers:
+  - type: doi
+    value: 10.1109/CDC45484.2021.9683612
+    description: DOI of the encompassing paper
+  - type: doi
+    value: 10.5281/zenodo.4633758
+    description: DOI of the Zenodo archive
+repository-code: https://github.com/TUHH-ICS/2021-code-convergence-properties-of-fast-quasi-lpv-model-predictive-control
+abstract: >-
+  In this paper, we study the convergence properties of an iterative algorithm for fast nonlinear model predictive control (MPC) of quasi-linear parameter-varying systems without inequality constraints.
+  Compared to previous works considering this algorithm, we contribute conditions under which the iterations are guaranteed to converge.
+  Furthermore, we show that the algorithm converges to suboptimal solutions and propose an optimality-preserving variant with moderately increased computational complexity.
+  Finally, we compare both variants in terms of quality of solution and computational performance with a state-of-the-art solver for nonlinear MPC in two simulation benchmarks.
+keywords:
+  - model predictive control
+license: GPL-3.0

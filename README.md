@@ -6,7 +6,7 @@
 
 This repository contains the simulation code to reproduce the tables and figures presented in
 
-> C. Hespe and H. Werner, "Convergence Properties of Fast quasi-LPV Model Predictive Control", *60th Conference on Decision and Control*, 2021
+> C. Hespe and H. Werner, "Convergence Properties of Fast quasi-LPV Model Predictive Control," *60th Conference on Decision and Control*. IEEE, 2021.
 
 The code has two main entry points, the scripts `benchmark_adip.m` and `benchmark_unicycle.m`, both in the root directory of this repository.
 They will produce among others the material presented in the paper.
