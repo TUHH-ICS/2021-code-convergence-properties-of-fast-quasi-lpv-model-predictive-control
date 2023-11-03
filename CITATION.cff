@@ -20,11 +20,6 @@ identifiers:
     description: DOI of the Zenodo archive
 repository-code: https://github.com/TUHH-ICS/2021-code-convergence-properties-of-fast-quasi-lpv-model-predictive-control
 repository: https://arxiv.org/abs/2309.07375
-abstract: >-
-  In this paper, we study the convergence properties of an iterative algorithm for fast nonlinear model predictive control (MPC) of quasi-linear parameter-varying systems without inequality constraints.
-  Compared to previous works considering this algorithm, we contribute conditions under which the iterations are guaranteed to converge.
-  Furthermore, we show that the algorithm converges to suboptimal solutions and propose an optimality-preserving variant with moderately increased computational complexity.
-  Finally, we compare both variants in terms of quality of solution and computational performance with a state-of-the-art solver for nonlinear MPC in two simulation benchmarks.
 keywords:
   - model predictive control
   - optimization
