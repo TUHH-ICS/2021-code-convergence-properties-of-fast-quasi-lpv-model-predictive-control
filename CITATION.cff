@@ -5,8 +5,8 @@ type: software
 authors:
   - given-names: Christian
     family-names: Hespe
-    orcid: 'https://orcid.org/0000-0001-5772-9044'
     affiliation: Hamburg University of Technology, Institute of Control Systems
+    orcid: 'https://orcid.org/0000-0001-5772-9044'
   - given-names: Herbert
     family-names: Werner
     affiliation: Hamburg University of Technology, Institute of Control Systems
